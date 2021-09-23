@@ -158,7 +158,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/Jercity/img/default.png') no-repeat center center;
+         style="background: url('https://raw.githubusercontent.com/Jercity/picgoimgs/main/createblog/fluidblog.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -236,7 +236,7 @@
             <h1 style="display: none">hexo+github建立免费的博客网站</h1>
             
             <div class="markdown-body">
-              <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>搭建个人博客网站听起来是一件很炫酷的事情，觉得很难需要很多的基础，我从基础的小白，花了一两天的时间搭建了属于自己的博客网站。由于是小白，所以使用了github的库来当服务器来搭建自己的个人完全免费的博客网站，现在记录一下搭建的步骤和遇到的问题。个人博客网站<a href="https://jercity.github.io/Jercity" title="Cyl&#39;Blog">https://jercity.github.io/Jercity</a></p>
+              <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>搭建个人博客网站听起来是一件很炫酷的事情，觉得很难需要很多的基础，我从基础的小白，花了一两天的时间搭建了属于自己的博客网站。由于是小白，所以使用了github的库来当服务器来搭建自己的个人完全免费的博客网站，现在记录一下搭建的步骤和遇到的问题。<br>个人博客网站<a href="https://jercity.github.io/Jercity" title="Cyl&#39;Blog">https://jercity.github.io/Jercity</a></p>
 <hr>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
 <li>创建自己的github账号</li>
@@ -245,13 +245,15 @@
 </ul>
 <p>前面的工作自己可以百度下载注册并了解好。</p>
 <hr>
-<h2 id="配置gitbuh的信息"><a href="#配置gitbuh的信息" class="headerlink" title="配置gitbuh的信息"></a>配置gitbuh的信息</h2><ol>
-<li>新建仓库<br>在github中，新建自己的仓库，用于存放网页文件的地方。仓库名最好使用‘你的名称.github.io’的形式，不过我注册的时候直接写的名字，后面的域名自己带了.github.io的后缀。</li>
-</ol>
+<h2 id="配置gitbuh的信息"><a href="#配置gitbuh的信息" class="headerlink" title="配置gitbuh的信息"></a>配置gitbuh的信息</h2><p><strong>1. 新建仓库</strong></p>
+<p>在github中，新建自己的仓库，用于存放网页文件的地方。仓库名最好使用‘你的名称.github.io’的形式，不过我注册的时候直接写的名字，后面的域名自己带了.github.io的后缀。</p>
 <p><img src="https://raw.githubusercontent.com/Jercity/picgoimgs/main/createblog/1.png" srcset="/Jercity/img/loading.gif" lazyload alt="1"></p>
 <p>新建之后默认会有主分支，也可以自己新建分支，后续进行部署的时候就是部署在你仓库的分支中(我的就部署在新建的firstTest分支中)。</p>
-<p>2.域名<br>打开新建的仓库，在setting中，找到pages项，生成自己的域名。就是你的仓库名字加.github.io后缀，如果需要就自己注册绑定自己购买的域名，之后访问就是通过这个域名进行的。<br><img src="https://raw.githubusercontent.com/Jercity/picgoimgs/main/createblog/2.png" srcset="/Jercity/img/loading.gif" lazyload alt="2"></p>
-<p>3.配置SSH key<br>这个是很关键的一步，之前我之后使用https的进行部署，发现总是部署失败，无法从本地文件上传到github仓库中，之后换成SSH key部署一次就成功了。</p>
+<p><strong>2. 域名</strong></p>
+<p>打开新建的仓库，在setting中，找到pages项，生成自己的域名。就是你的仓库名字加.github.io后缀，如果需要就自己注册绑定自己购买的域名，之后访问就是通过这个域名进行的。</p>
+<p><img src="https://raw.githubusercontent.com/Jercity/picgoimgs/main/createblog/2.png" srcset="/Jercity/img/loading.gif" lazyload alt="2"></p>
+<p><strong>3.配置SSH key</strong></p>
+<p>这个是很关键的一步，之前我之后使用https的进行部署，发现总是部署失败，无法从本地文件上传到github仓库中，之后换成SSH key部署一次就成功了。</p>
 <ul>
 <li><p>检查SSH key 是否存在<br>右键调出Git Bash 窗口,输入<br><code>ls -al ~/.ssh</code><br>如果有id_rsa.pub 或 id_dsa.pub，则已有ssh key</p>
 </li>
@@ -267,19 +269,30 @@
 <p><img src="https://raw.githubusercontent.com/Jercity/picgoimgs/main/createblog/3.png" srcset="/Jercity/img/loading.gif" lazyload alt="3"></p>
 <hr>
 <h2 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h2><p>hexo是一款很好的支持markdown语法的静态资源网页的部署工具，我之所以选择hexo就其基于node.js，方便部署和安装，相对于github高度整合的Jekyll来说，其用Ruby语法写的部署和安装更为复杂，其hexo的网页的主题个人认为更加好看，不过两款都是非常优秀的网页部署工具。</p>
-<ol>
-<li>hexo的安装<br>在对应的安装路径下，输入<br><code>$ npm install -g hexo</code><br>即可安装成功，-g表示全局部署，安装成功后才可以使用hexo的命令</li>
-<li>初始化<br>新建一个文件夹存放网页文件的，之后这个文件夹就是网页的根目录。我的为hexo文件夹。<br><code>cd hexo</code><br><code>$ hexo init</code><br>在hexo的文件夹中会生成一些文件，包括node_modules。<br><img src="https://raw.githubusercontent.com/Jercity/picgoimgs/main/createblog/4.png" srcset="/Jercity/img/loading.gif" lazyload alt="4"></li>
-<li>生成静态文件<br>输入命令<br><code>hexo g</code><br>其中g是generate的意思，只在生成静态文件，放在public文件夹中，用于部署在github仓库上的文件。</li>
-<li>测试<br>输入命令<br><code>hexo s</code><br>s是server的意思，发布本地服务，可以在本地的浏览器访问。<br><img src="https://raw.githubusercontent.com/Jercity/picgoimgs/main/createblog/5.png" srcset="/Jercity/img/loading.gif" lazyload alt="5"><br>访问地址默认为<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a><br>然后打开浏览器，输入<a href="http://localhost:4000，会看到成功的网页，属于自己的网页生成了。">http://localhost:4000，会看到成功的网页，属于自己的网页生成了。</a><br>默认的主题是landscape，后期可以更改自己的网页主题，之后再说。<br><img src="https://raw.githubusercontent.com/Jercity/picgoimgs/main/createblog/6.png" srcset="/Jercity/img/loading.gif" lazyload alt="6"></li>
-</ol>
+<p><strong>1. hexo的安装</strong></p>
+<p>在对应的安装路径下，输入<br><code>$ npm install -g hexo</code><br>即可安装成功，-g表示全局部署，安装成功后才可以使用hexo的命令</p>
+<p><strong>2. 初始化</strong></p>
+<p>新建一个文件夹存放网页文件的，之后这个文件夹就是网页的根目录。我的为hexo文件夹。<br><code>cd hexo</code><br><code>$ hexo init</code><br>在hexo的文件夹中会生成一些文件，包括node_modules。</p>
+<p><img src="https://raw.githubusercontent.com/Jercity/picgoimgs/main/createblog/4.png" srcset="/Jercity/img/loading.gif" lazyload alt="4"></p>
+<p><strong>3. 生成静态文件</strong></p>
+<p>输入命令:<br><code>hexo g</code><br>其中g是generate的意思，只在生成静态文件，放在public文件夹中，用于部署在github仓库上的文件。</p>
+<p><strong>4. 测试</strong></p>
+<p>输入命令:<br><code>hexo s</code><br>s是server的意思，发布本地服务，可以在本地的浏览器访问。</p>
+<p><img src="https://raw.githubusercontent.com/Jercity/picgoimgs/main/createblog/5.png" srcset="/Jercity/img/loading.gif" lazyload alt="5"></p>
+<p>访问地址默认为<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a><br>然后打开浏览器，输入<a href="http://localhost:4000，会看到成功的网页，属于自己的网页生成了。">http://localhost:4000，会看到成功的网页，属于自己的网页生成了。</a><br>默认的主题是landscape，后期可以更改自己的网页主题，之后再说。</p>
+<p><img src="https://raw.githubusercontent.com/Jercity/picgoimgs/main/createblog/6.png" srcset="/Jercity/img/loading.gif" lazyload alt="6"></p>
 <hr>
-<h2 id="hexo部署"><a href="#hexo部署" class="headerlink" title="hexo部署"></a>hexo部署</h2><ol>
-<li>配置部署环境<br>通过之前生成的SSH key来代替github的账号密码来进行上传，首次使用好像要绑定ssh的用户名和邮箱等。<br><img src="https://raw.githubusercontent.com/Jercity/picgoimgs/main/createblog/7.png" srcset="/Jercity/img/loading.gif" lazyload alt="7"></li>
-</ol>
+<h2 id="hexo部署"><a href="#hexo部署" class="headerlink" title="hexo部署"></a>hexo部署</h2><p><strong>1. 配置部署环境</strong></p>
+<p>通过之前生成的SSH key来代替github的账号密码来进行上传，首次使用好像要绑定ssh的用户名和邮箱等。<br><img src="https://raw.githubusercontent.com/Jercity/picgoimgs/main/createblog/7.png" srcset="/Jercity/img/loading.gif" lazyload alt="7"></p>
 <p>在根目录下，找到 _config.yml 文件，用记事本打开，搜索找到deploy的部分，进行如下的配置：</p>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">deploy:</span><br><span class="hljs-symbol">  type:</span> git<br><span class="hljs-symbol">  repository:</span> git@github.com:Jercity/Jercity.git<br><span class="hljs-symbol">  branch:</span> master<br></code></pre></td></tr></table></figure>
-<p>其中，repository是你仓库的ssh key的clone码，现在不能使用HTTPS的配置方式了。(注意yml文件的:后面一定要加空格，不然会出错，语法规则)<br>配置了在如图的地方找到你的clone的ssh。我就是一开始使用HTTPS的文字一直部署失败，现在不能使用了，统一用ssh的方法一下就成功了。<br>2. 部署插件安装<br>使用npm 命令来安装部署的插件<br><code>npm install hexo-deployer-git --save</code><br>注意，这个命令一定要用git bush打开的窗口赖部署，不然可能会出错，我是用cmd安装插件的，结果有.deploy_git的文件生成，部署失败，网上说删除这个文件就可以，结果我测试不行，最好两种方法都用了，也改了ssh的方法，最好才部署成功。<br>3. 部署<br>输入命令<br><code>hexo d</code><br>进行部署上传，hexo速度比较快，很快就可以在github中看到上传的网页文件了。注意上传之后会替换你仓库分支的文件，原来的会自动删除，需要及时做好备份。<br>在github中查看一下自己的仓库，访问一下自己的域名，查看自己的网站吧。至此，你的个人博客网站就搭建好了，<br><img src="https://raw.githubusercontent.com/Jercity/picgoimgs/main/createblog/8.png" srcset="/Jercity/img/loading.gif" lazyload alt="8"><br>之后更新主题，网页统计和评论功能。<br>欢迎观看我的博客网站<a href="https://jercity.github.io/Jercity" title="Cyl&#39;Blog">https://jercity.github.io/Jercity</a></p>
+<p>其中，repository是你仓库的ssh key的clone码，现在不能使用HTTPS的配置方式了。(注意yml文件的:后面一定要加空格，不然会出错，语法规则)<br>配置了在如图的地方找到你的clone的ssh。我就是一开始使用HTTPS的文字一直部署失败，现在不能使用了，统一用ssh的方法一下就成功了。</p>
+<p><strong>2. 部署插件安装</strong></p>
+<p>使用npm 命令来安装部署的插件<br><code>npm install hexo-deployer-git --save</code><br>注意，这个命令一定要用git bush打开的窗口赖部署，不然可能会出错，我是用cmd安装插件的，结果有.deploy_git的文件生成，部署失败，网上说删除这个文件就可以，结果我测试不行，最好两种方法都用了，也改了ssh的方法，最好才部署成功。</p>
+<p><strong>3. 部署</strong></p>
+<p>输入命令:<br><code>hexo d</code><br>进行部署上传，hexo速度比较快，很快就可以在github中看到上传的网页文件了。注意上传之后会替换你仓库分支的文件，原来的会自动删除，需要及时做好备份。<br>在github中查看一下自己的仓库，访问一下自己的域名，查看自己的网站吧。至此，你的个人博客网站就搭建好了，</p>
+<p><img src="https://raw.githubusercontent.com/Jercity/picgoimgs/main/createblog/8.png" srcset="/Jercity/img/loading.gif" lazyload alt="8"></p>
+<p>之后更新主题，网页统计和评论功能。<br>欢迎观看我的博客网站<a href="https://jercity.github.io/Jercity" title="Cyl&#39;Blog">https://jercity.github.io/Jercity</a></p>
 
             </div>
             <hr>
@@ -296,6 +309,8 @@
                     
                       <a class="hover-with-bg" href="/Jercity/tags/%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/">搭建网站</a>
                     
+                      <a class="hover-with-bg" href="/Jercity/tags/github/">github</a>
+                    
                   </div>
                 
               </div>
@@ -311,15 +326,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Jercity/2021/09/15/firstblog/">
+                      <a href="/Jercity/2021/09/17/hello-world/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">MarkDown语法技巧</span>
+                        <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/Jercity/2021/09/15/firstblog/">
+                        <span class="hidden-mobile">MarkDown语法技巧</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
